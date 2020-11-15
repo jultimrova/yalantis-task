@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.employeesByAlphabet {
+    max-width: 20%;
+    margin: 10px;
+    padding: 10px;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.employee__name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.employee__check {
+    margin-left: 20px;
+}
+
+.employee__check:hover {
+    cursor: pointer;
+}
+
