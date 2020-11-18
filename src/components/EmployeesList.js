@@ -1,7 +1,7 @@
 import React from 'react'
 import Employee from './Employee'
 
-const EmployeesList = ({employees, handleChange, selectEmployee}) => {
+const EmployeesList = ({employees, handleClick, handleChange}) => {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
     return (
@@ -10,19 +10,22 @@ const EmployeesList = ({employees, handleChange, selectEmployee}) => {
                 return (
                     <div key={index} className='employeesByAlphabet'>
                         <strong className='letter'>{letter}</strong>
-                        {employees.length > 0 ? (
-                            employees.map((employee, index) => {
-                                const {lastName, firstName, id} = employee
-                                if (lastName.charAt(0) === letter) {
-                                    return <Employee key={index + 1} id={id} lastName={lastName}
-                                                     firstName={firstName} handleChange={handleChange}
-                                                     selectEmployee={selectEmployee}/>
-                                }
-                            })
-                        ) : (
-                            <p>No data</p>
-                        )
-                        }
+                        <p id={letter} className='empty'>---</p>
+                        {employees.map(({lastName, firstName, id, checked, disabled}, index) => {
+                            const empty = document.querySelectorAll('.empty')
+                            if (lastName.charAt(0) === letter) {
+                                empty.forEach(each => {
+                                    if (each.id === letter) {
+                                        each.style.display = 'none'
+                                    }
+                                })
+                                return <Employee key={index + 1} id={id} lastName={lastName}
+                                                 firstName={firstName} checked={checked}
+                                                 disabled={disabled} handleClick={handleClick}
+                                                 handleChange={handleChange}
+                                />
+                            }
+                        })}
                     </div>
                 )
             })}
