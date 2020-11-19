@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import './styles/Employees.css'
+import axios from 'axios'
 import EmployeesList from './components/EmployeesList'
 import EmployeesBirthday from './components/EmployeesBirthday'
-import axios from 'axios'
 
 const App = () => {
     const [employees, setEmployee] = useState([])
@@ -43,12 +43,6 @@ const App = () => {
     useEffect(() => {
         localStorage.setItem('selectedEmployees', JSON.stringify(selectedEmployees))
     }, [selectedEmployees])
-
-    useEffect(() => {
-        if (localStorage.getItem('employees')) {
-            setEmployee(JSON.parse(localStorage.getItem('employees')))
-        }
-    }, [])
 
     const handleChange = (e, id) => {
         setEmployee(employees.map(emp => {

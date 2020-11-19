@@ -19,10 +19,10 @@ const EmployeesList = ({employees, handleClick, handleChange}) => {
                                         each.style.display = 'none'
                                     }
                                 })
-                                return <Employee key={index + 1} id={id} lastName={lastName}
-                                                 firstName={firstName} checked={checked}
-                                                 disabled={disabled} handleClick={handleClick}
-                                                 handleChange={handleChange}
+                                return <Employee key={index + 1} id={id}
+                                                 lastName={lastName} firstName={firstName}
+                                                 checked={checked} disabled={disabled}
+                                                 handleClick={handleClick} handleChange={handleChange}
                                 />
                             }
                         })}

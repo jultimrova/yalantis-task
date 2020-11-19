@@ -1,6 +1,6 @@
 .list, .birthday {
     border: aliceblue solid 1px;
-    box-shadow:  0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .list {
@@ -23,9 +23,9 @@
     width: 250px;
     margin: 10px;
     padding: 10px;
-    background-color: aliceblue;
-    border: 1px solid black;
+    background-color: rgba(0,0,300,0.3);
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
 .employeeName {
@@ -33,13 +33,21 @@
     justify-content: space-between;
     align-items: center;
     text-align: left;
+    padding: 5px;
 }
 
 .employeeCheck {
+    width: 20px;
+    height: 20px;
     margin-left: 20px;
 }
 
 .employeeCheck:hover {
     cursor: pointer;
 }
+
+.letter {
+    font-family: "Bookman Old Style", serif;
+}
+
 
